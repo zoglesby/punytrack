@@ -12,7 +12,7 @@ from pecan.hooks import PecanHook
 class CorsHook(PecanHook):
 
     def after(self, state):
-        state.response.headers['Access-Control-Allow-Origin'] = 'https://cleverdevil.io'
+        state.response.headers['Access-Control-Allow-Origin'] = 'https://zach.oglesby.co'
         state.response.headers['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
         state.response.headers['Access-Control-Allow-Headers'] = 'origin, authorization, accept'
 
@@ -38,7 +38,7 @@ class APIController(HookController):
         )
 
     @expose('json')
-    def range(self, token, tz='US/Pacific', start=None, duration=24):
+    def range(self, token, tz='US/Eastern', start=None, duration=24):
         zone = timezone(tz)
 
         print('~' * 80)
