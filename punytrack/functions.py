@@ -70,7 +70,7 @@ def rollup_day(token, day, force=False):
     response = athena.start_query_execution(
         QueryString=query,
         QueryExecutionContext={
-            'Database': 'locations'
+            'Database': 'locationdb'
         },
         ResultConfiguration={
             'OutputLocation': output_location
